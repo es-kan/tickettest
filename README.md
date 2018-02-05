@@ -20,17 +20,17 @@ can be accessed:
 
 1.  View all ticket information about a match. Does not update the stock.
       1.5:  This would be done with a GET request to
-            "www.test.nl/api/matches/01-01-2018"
+            `"www.test.nl/api/matches/01-01-2018"`
 2.  Update the stock of a certain Match-Category-Stand combination.
       2.5:  This can be done with a PUT request to
-            "www.test.nl/api/matches/{ticket_id}"
+            `"www.test.nl/api/matches/{ticket_id}"`
           This is sort of lazy and can probably be improved by having it accept
           more parameters like reservation size, and eventually stop requiring
           ticket ID (and therefore not requiring use of show() before reserve())
 
 The model scheme is fairly straightforward. Here they are in pseudocode:
 
-"""
+```
 class HomeMatch:
     date_scheduled = DateField()
     base_price = FloatField()
@@ -48,4 +48,4 @@ class TicketStock:
     match = ForeignKey(HomeMatch)
     category = ForeignKey(Category)
     stand = ForeignKey(Stand)
-"""
+```
