@@ -49,3 +49,5 @@ class TicketStock:
     category = ForeignKey(Category)
     stand = ForeignKey(Stand)
 ```
+
+Note: the database hasn't been pushed yet. The settings are configured for SQlite. After database creation the generic seeder can be run to populate.
